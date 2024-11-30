@@ -13,6 +13,10 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>2025 Resolutions</title>
   </head>
 
@@ -65,7 +69,6 @@
       font-family: "Lora", serif;
     }
 
-    /* Estilo do Menu */
     .menu {
       display: flex;
       gap: 20px;
@@ -89,6 +92,9 @@
       margin-bottom: 200px;
     }
 
+    .title h4 {
+      margin-top: 30px;
+    }
     @media (max-width: 768px) {
       .menu {
         flex-direction: column;
@@ -148,11 +154,12 @@
     </nav>
     <div class="title">
       <h1>Happy New Year</h1>
-      <h2>
-        It's never too late. Never too late to start over, never too late to be
-        happy.
-      </h2>
-      <h4>Roll up your sleeves and lets go</h4>
+      <h2 id="text"></h2>
+      <h4
+        class="animate__animated animate__pulse animate__delay-2s animate__infinite infinite animate__slow 2s"
+      >
+        Roll up your sleeves and lets go
+      </h4>
       <span img=""></span>
     </div>
     <section id="work">
@@ -226,6 +233,38 @@
     <script>
       $(".material-symbols-outlined").click(function () {
         $("nav").slideToggle();
+      });
+      $(document).ready(function () {
+        const text = "Learn from yesterday, live for today, hope for tomorrow.";
+        const typingSpeed = 100;
+        const pauseTime = 1000;
+
+        function typeText(index) {
+          if (index < text.length) {
+            $("#text").append(text[index]);
+            setTimeout(() => typeText(index + 1), typingSpeed);
+          } else {
+            setTimeout(() => deleteText(text.length - 1), pauseTime);
+          }
+        }
+
+        function deleteText(index) {
+          if (index >= 0) {
+            $("#text").text(text.substring(0, index));
+            setTimeout(() => deleteText(index - 1), typingSpeed / 3);
+          } else {
+            setTimeout(() => typeText(0), pauseTime / 2);
+          }
+        }
+
+        function blinkCursor() {
+          setInterval(() => {
+            $("#text").toggleClass("cursor-hidden");
+          }, 500);
+        }
+
+        blinkCursor();
+        typeText(0);
       });
     </script>
   </body>
