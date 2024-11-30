@@ -51,6 +51,10 @@
       margin-left: 6px;
     }
 
+    .material-symbols-outlined:hover {
+      cursor: pointer;
+    }
+
     nav {
       font-size: 20px;
       background-color: #fff;
@@ -131,7 +135,7 @@
 
   <body>
     <header>
-      <div class="logo">resolutions 2025</div>
+      <div class="logo">Resolutions 2025</div>
       <span class="material-symbols-outlined"> menu </span>
     </header>
     <nav>
@@ -211,5 +215,18 @@
         <li>goal 4</li>
       </ul>
     </section>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script>
+      $(".material-symbols-outlined").click(function () {
+        $("nav").slideToggle();
+      });
+    </script>
   </body>
 </html>
