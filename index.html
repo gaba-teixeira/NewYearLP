@@ -54,6 +54,13 @@
       color: #ff9800;
     }
 
+    .title {
+      text-align: center;
+      padding: 10px;
+      margin-top: 100px;
+      margin-bottom: 200px;
+    }
+
     /* Responsividade 
     @media (max-width: 768px) {
       .menu {
@@ -68,12 +75,13 @@
       justify-content: center;
       align-items: center;
       width: 60%; /* Largura fixa do quadrado */
-      height: 300px; /* Altura fixa do quadrado */
+      height: 300spx; /* Altura fixa do quadrado */
       margin: 20px auto; /* Centraliza na tela */
       background-color: #fff; /* Fundo branco */
       border: 1px solid #ddd; /* Borda leve */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
       border-radius: 8px; /* Cantos arredondados */
+      margin-bottom: 50px;
     }
 
     section h2 {
@@ -109,14 +117,16 @@
         </ul>
       </nav>
     </header>
-    <h1>Happy New Year</h1>
-    <h2>
-      It's never too late. Never too late to start over, never too late to be
-      happy.
-    </h2>
-    <h4>Roll up your sleeves and lets go</h4>
-    <span img=""></span>
-    <section class="work">
+    <div class="title">
+      <h1>Happy New Year</h1>
+      <h2>
+        It's never too late. Never too late to start over, never too late to be
+        happy.
+      </h2>
+      <h4>Roll up your sleeves and lets go</h4>
+      <span img=""></span>
+    </div>
+    <section id="work">
       <h2>Work</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
@@ -131,7 +141,7 @@
         <li>goal 4</li>
       </ul>
     </section>
-    <section class="health">
+    <section id="health">
       <h2>Health</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
@@ -146,7 +156,7 @@
         <li>goal 4</li>
       </ul>
     </section>
-    <section class="relationship">
+    <section id="relationship">
       <h2>Relationship</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
@@ -161,7 +171,7 @@
         <li>goal 4</li>
       </ul>
     </section>
-    <section class="travel">
+    <section id="travel">
       <h2>Travel</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
