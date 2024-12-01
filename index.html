@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Reenie+Beanie&family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu"
@@ -105,37 +106,42 @@
 
     section {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 60%; /* Largura fixa do quadrado */
-      height: 300spx; /* Altura fixa do quadrado */
+      align-items: center; /* Alinha verticalmente a imagem e o texto */
+      justify-content: space-between; /* Espaço entre a imagem e o texto */
+      width: 80%; /* Largura fixa do quadrado */
       margin: 20px auto; /* Centraliza na tela */
       background-color: #fff; /* Fundo branco */
       border: 1px solid #ddd; /* Borda leve */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
       border-radius: 8px; /* Cantos arredondados */
-      margin-bottom: 50px;
+      padding: 20px;
+      gap: 20px; /* Espaço entre imagem e texto */
     }
 
-    section h2 {
-      margin-bottom: 10px;
+    section .text-content {
+      display: flex;
+      flex-direction: column; /* Empilha os elementos h2, p e ul */
+      gap: 5px; /* Espaço entre os elementos */
+      width: 60%; /* Define a largura do texto */
+      margin-left: 10px;
     }
 
-    section p {
-      text-align: center;
-      padding: 0 10px;
-      font-size: 0.9em;
+    section img {
+      width: 35%; /* Ajuste da largura da imagem */
+      max-height: 200px; /* Altura máxima */
+      object-fit: cover; /* Ajusta a imagem para caber no espaço */
+      border-radius: 8px; /* Bordas arredondadas */
     }
 
-    ul.list-goals {
-      text-align: left;
-      padding: 0 15px;
+    /* Ajustes específicos para cada seção */
+    #work img,
+    #relationship img {
+      order: 2; /* Imagem à direita */
     }
 
-    ul.list-goals li {
-      font-size: 0.9em;
-      margin: 5px 0;
+    #health img,
+    #travel img {
+      order: -1; /* Imagem à esquerda */
     }
   </style>
 
@@ -162,66 +168,86 @@
       </h4>
       <span img=""></span>
     </div>
-    <section id="work">
-      <h2>Work</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
-        commodi similique, nihil eos quam dignissimos quibusdam voluptas
-        explicabo iusto animi amet sunt. Error praesentium molestias placeat
-        aperiam reiciendis iusto inventore?
-      </p>
-      <ul class="list-goals">
-        <li>goal 1</li>
-        <li>goal 2</li>
-        <li>goal 3</li>
-        <li>goal 4</li>
-      </ul>
-    </section>
-    <section id="health">
-      <h2>Health</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
-        commodi similique, nihil eos quam dignissimos quibusdam voluptas
-        explicabo iusto animi amet sunt. Error praesentium molestias placeat
-        aperiam reiciendis iusto inventore?
-      </p>
-      <ul class="list-goals">
-        <li>goal 1</li>
-        <li>goal 2</li>
-        <li>goal 3</li>
-        <li>goal 4</li>
-      </ul>
-    </section>
-    <section id="relationship">
-      <h2>Relationship</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
-        commodi similique, nihil eos quam dignissimos quibusdam voluptas
-        explicabo iusto animi amet sunt. Error praesentium molestias placeat
-        aperiam reiciendis iusto inventore?
-      </p>
-      <ul class="list-goals">
-        <li>goal 1</li>
-        <li>goal 2</li>
-        <li>goal 3</li>
-        <li>goal 4</li>
-      </ul>
-    </section>
-    <section id="travel">
-      <h2>Travel</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
-        commodi similique, nihil eos quam dignissimos quibusdam voluptas
-        explicabo iusto animi amet sunt. Error praesentium molestias placeat
-        aperiam reiciendis iusto inventore?
-      </p>
-      <ul class="list-goals">
-        <li>goal 1</li>
-        <li>goal 2</li>
-        <li>goal 3</li>
-        <li>goal 4</li>
-      </ul>
-    </section>
+    <div data-aos="fade-right">
+      <section id="work">
+        <img src="imagem-health.jpg" alt="Imagem de trabalho" />
+        <div class="text-content">
+          <h2>Work</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
+            commodi similique, nihil eos quam dignissimos quibusdam voluptas
+            explicabo iusto animi amet sunt. Error praesentium molestias placeat
+            aperiam reiciendis iusto inventore?
+          </p>
+          <ul class="list-goals">
+            <li>goal 1</li>
+            <li>goal 2</li>
+            <li>goal 3</li>
+            <li>goal 4</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <div data-aos="fade-left">
+      <section id="health">
+        <img src="imagem-health.jpg" alt="Imagem de saúde" />
+        <div class="text-content">
+          <h2>Health</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
+            commodi similique, nihil eos quam dignissimos quibusdam voluptas
+            explicabo iusto animi amet sunt. Error praesentium molestias placeat
+            aperiam reiciendis iusto inventore?
+          </p>
+          <ul class="list-goals">
+            <li>goal 1</li>
+            <li>goal 2</li>
+            <li>goal 3</li>
+            <li>goal 4</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <div data-aos="fade-right">
+      <section id="relationship">
+        <img src="imagem-health.jpg" alt="Imagem de relacionamento" />
+        <div class="text-content">
+          <h2>Relationship</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
+            commodi similique, nihil eos quam dignissimos quibusdam voluptas
+            explicabo iusto animi amet sunt. Error praesentium molestias placeat
+            aperiam reiciendis iusto inventore?
+          </p>
+          <ul class="list-goals">
+            <li>goal 1</li>
+            <li>goal 2</li>
+            <li>goal 3</li>
+            <li>goal 4</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <div data-aos="fade-left">
+      <section id="travel">
+        <img src="imagem-health.jpg" alt="Imagem de viagem" />
+        <div class="text-content">
+          <h2>Travel</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
+            commodi similique, nihil eos quam dignissimos quibusdam voluptas
+            explicabo iusto animi amet sunt. Error praesentium molestias placeat
+            aperiam reiciendis iusto inventore?
+          </p>
+          <ul class="list-goals">
+            <li>goal 1</li>
+            <li>goal 2</li>
+            <li>goal 3</li>
+            <li>goal 4</li>
+          </ul>
+        </div>
+      </section>
+    </div>
     <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-1.11.0.min.js"
@@ -266,6 +292,10 @@
         blinkCursor();
         typeText(0);
       });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>
