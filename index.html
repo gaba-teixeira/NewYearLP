@@ -87,15 +87,40 @@
     }
 
     .title {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
       text-align: center;
-      padding: 10px;
-      margin-top: 100px;
-      margin-bottom: 200px;
+      overflow: hidden; /* Garante que o vídeo não ultrapasse os limites */
+    }
+
+    .title video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+    }
+
+    .title h1 {
+      font-size: 3em;
+      margin: 0;
+      z-index: 1; /* Garante que o texto fique visível acima do vídeo */
     }
 
     .title h4 {
-      margin-top: 30px;
+      margin-top: 10px;
+      font-size: 1.5em;
+      z-index: 1;
     }
+
     @media (max-width: 768px) {
       .menu {
         flex-direction: column;
@@ -116,32 +141,75 @@
       border-radius: 8px; /* Cantos arredondados */
       padding: 20px;
       gap: 20px; /* Espaço entre imagem e texto */
+      margin-bottom: 100px;
     }
 
     section .text-content {
       display: flex;
-      flex-direction: column; /* Empilha os elementos h2, p e ul */
-      gap: 5px; /* Espaço entre os elementos */
-      width: 60%; /* Define a largura do texto */
+      flex-direction: column;
+      gap: 5px;
+      width: 60%;
       margin-left: 10px;
     }
 
     section img {
-      width: 35%; /* Ajuste da largura da imagem */
-      max-height: 200px; /* Altura máxima */
-      object-fit: cover; /* Ajusta a imagem para caber no espaço */
-      border-radius: 8px; /* Bordas arredondadas */
+      width: 35%;
+      max-height: 300px;
+
+      border-radius: 8px;
     }
 
-    /* Ajustes específicos para cada seção */
     #work img,
     #relationship img {
-      order: 2; /* Imagem à direita */
+      order: 2;
     }
 
     #health img,
     #travel img {
-      order: -1; /* Imagem à esquerda */
+      order: -1;
+    }
+
+    .message {
+      width: 80%; /* Largura fixa do quadrado */
+      margin: 20px auto; /* Centraliza na tela */
+
+      padding: 20px;
+    }
+    .message form {
+      display: flex;
+      flex-direction: column;
+
+      gap: 15px; /* Adiciona espaço entre a textarea e o botão */
+    }
+
+    .message button {
+      padding: 10px 20px;
+      background-color: #ffc93c;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 20%;
+    }
+
+    .message button:hover {
+      background-color: #eca900;
+      cursor: ;
+    }
+
+    .message textarea {
+      width: 100%;
+      height: 150px;
+      resize: none;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #message {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
     }
   </style>
 
@@ -159,6 +227,12 @@
       </ul>
     </nav>
     <div class="title">
+      <video autoplay muted loop>
+        <source
+          src="https://cdn.pixabay.com/video/2022/10/24/136230-764387572_large.mp4"
+          type="video/mp4"
+        />
+      </video>
       <h1>Happy New Year</h1>
       <h2 id="text"></h2>
       <h4
@@ -168,9 +242,17 @@
       </h4>
       <span img=""></span>
     </div>
-    <div data-aos="fade-right">
+    <div
+      data-aos="fade-right"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+    >
+      >
       <section id="work">
-        <img src="imagem-health.jpg" alt="Imagem de trabalho" />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/151/745/original/code-geek-2680204_1280.png?1733012932"
+          alt="Imagem de trabalho"
+        />
         <div class="text-content">
           <h2>Work</h2>
           <p>
@@ -188,9 +270,13 @@
         </div>
       </section>
     </div>
-    <div data-aos="fade-left">
+    <div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
       <section id="health">
-        <img src="imagem-health.jpg" alt="Imagem de saúde" />
+        <img
+          src="
+https://s3.amazonaws.com/shecodesio-production/uploads/files/000/151/748/original/e14c9c038487da765a34f89462864da2.jpg?1733013481"
+          alt="Imagem de saúde"
+        />
         <div class="text-content">
           <h2>Health</h2>
           <p>
@@ -208,9 +294,16 @@
         </div>
       </section>
     </div>
-    <div data-aos="fade-right">
+    <div
+      data-aos="fade-right"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+    >
       <section id="relationship">
-        <img src="imagem-health.jpg" alt="Imagem de relacionamento" />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/151/746/original/4c70fe07daa99c827d6e5ce5de8c9dc7.jpg?173301297"
+          alt="Imagem de relacionamento"
+        />
         <div class="text-content">
           <h2>Relationship</h2>
           <p>
@@ -228,9 +321,12 @@
         </div>
       </section>
     </div>
-    <div data-aos="fade-left">
+    <div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
       <section id="travel">
-        <img src="imagem-health.jpg" alt="Imagem de viagem" />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/151/747/original/644687a5db7b0034c43ddd65609178d2.jpg?1733013470"
+          alt="Imagem de viagem"
+        />
         <div class="text-content">
           <h2>Travel</h2>
           <p>
@@ -248,6 +344,19 @@
         </div>
       </section>
     </div>
+    <div class="message" id="message">
+      <h2>
+        Any input to help me reach my goals next year? Any tips are
+        welcome—leave me a message if you'd like!
+      </h2>
+      <form id="formulario">
+        <textarea placeholder="Write your message here. . ."></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+    <footer>
+    <p>Codded by </p>
+    </footer>
     <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-1.11.0.min.js"
@@ -292,6 +401,18 @@
         blinkCursor();
         typeText(0);
       });
+
+      const form = document.getElementById("formulario");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        addThankYouMessage();
+      });
+
+      function addThankYouMessage() {
+        let thanksMessage = document.getElementById("message");
+        thanksMessage.innerHTML =
+          "Thank You for your message, have a great new year!";
+      }
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
