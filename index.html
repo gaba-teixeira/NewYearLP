@@ -30,7 +30,6 @@
     li {
       margin: 0;
       padding: 0;
-      list-style: none;
     }
 
     body {
@@ -48,7 +47,6 @@
       padding: 15px;
       font-family: "Lora", serif;
       display: flex;
-      justify-content: space-between;
     }
 
     header .logo {
@@ -59,8 +57,8 @@
 
     .material-symbols-outlined {
       font-size: 30px;
-      margin-top: 6px;
-      margin-left: 6px;
+      margin-top: 3px;
+      margin-left: 10px;
     }
 
     .material-symbols-outlined:hover {
@@ -68,28 +66,36 @@
     }
 
     nav {
-      font-size: 20px;
+      display: none; /* Esconde por padrão */
+      position: fixed; /* Mantém o menu fixo na lateral esquerda */
+      top: 10;
+      left: 0;
+      height: 100%; /* Faz o menu ocupar toda a altura da tela */
+      width: 250px; /* Define a largura do menu */
       background: radial-gradient(
         circle at 18.7% 37.8%,
         rgb(250, 250, 250) 0%,
         rgb(225, 234, 238) 90%
       );
       padding: 10px;
-
-      display: none;
-
-      font-family: "Lora", serif;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000; /* Garante que o menu fique acima de outros elementos */
     }
 
     .menu {
       display: flex;
-      gap: 20px;
+      flex-direction: column; /* Alinha os itens na vertical */
+      gap: 10px;
+    }
+
+    .menu li {
+      margin-bottom: 10px;
     }
 
     .menu a {
       text-decoration: none;
       color: #ffc93c;
-      font-size: 1em;
+      font-size: 1.2em;
       transition: color 0.3s ease;
     }
 
@@ -108,6 +114,7 @@
       color: white;
       text-align: center;
       overflow: hidden;
+      margin-bottom: 50px;
     }
 
     .title video {
@@ -216,6 +223,7 @@
       resize: none;
       font-family: Arial, Helvetica, sans-serif;
       border-radius: 8px;
+      font-size: larger;
     }
 
     #message {
@@ -244,8 +252,9 @@
       <ul class="menu">
         <li><a href="#work">Work</a></li>
         <li><a href="#health">Health</a></li>
-        <li><a href="#relationships">Relationships</a></li>
+        <li><a href="#relationship">Relationships</a></li>
         <li><a href="#travel">Goals</a></li>
+        <li><a href="#message">Leave me a message 😊</a></li>
       </ul>
     </nav>
     <div class="title">
@@ -278,16 +287,26 @@
         <div class="text-content">
           <h2>Work</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
-            commodi similique, nihil eos quam dignissimos quibusdam voluptas
-            explicabo iusto animi amet sunt. Error praesentium molestias placeat
-            aperiam reiciendis iusto inventore?
+            This year, I am committed to achieving significant milestones in my
+            career journey. Transitioning into the tech industry is my primary
+            focus, and I am eager to embrace the challenges and opportunities it
+            brings.
           </p>
           <ul class="list-goals">
-            <li>goal 1</li>
-            <li>goal 2</li>
-            <li>goal 3</li>
-            <li>goal 4</li>
+            <li>
+              Transition to the tech industry with confidence and determination.
+            </li>
+            <li>
+              Secure my first job in the field, growing my skills and
+              adaptability.
+            </li>
+            <li>
+              Complete at least one additional course to deepen my knowledge and
+              strengthen my foundation.
+            </li>
+            <li>
+              Approach new challenges with excitement and a growth mindset.
+            </li>
           </ul>
         </div>
       </section>
@@ -302,16 +321,23 @@ https://s3.amazonaws.com/shecodesio-production/uploads/files/000/151/748/origina
         <div class="text-content">
           <h2>Health</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
-            commodi similique, nihil eos quam dignissimos quibusdam voluptas
-            explicabo iusto animi amet sunt. Error praesentium molestias placeat
-            aperiam reiciendis iusto inventore?
+            This year, my goal is to prioritize my well-being and cultivate a
+            healthier lifestyle. I’m ready to make positive changes and invest
+            in habits that enhance my physical and mental health.
           </p>
           <ul class="list-goals">
-            <li>goal 1</li>
-            <li>goal 2</li>
-            <li>goal 3</li>
-            <li>goal 4</li>
+            <li>
+              Focus on adopting healthier eating habits and working towards
+              sustainable weight loss.
+            </li>
+            <li>
+              Commit to working out every day to build strength and endurance.
+            </li>
+            <li>
+              Explore a new activity as a hobby, bringing joy and balance to my
+              routine.
+            </li>
+            <li>Begin therapy to nurture my mental health</li>
           </ul>
         </div>
       </section>
@@ -329,16 +355,23 @@ https://s3.amazonaws.com/shecodesio-production/uploads/files/000/151/748/origina
         <div class="text-content">
           <h2>Relationship</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
-            commodi similique, nihil eos quam dignissimos quibusdam voluptas
-            explicabo iusto animi amet sunt. Error praesentium molestias placeat
-            aperiam reiciendis iusto inventore?
+            This year, I want to strengthen the bonds that matter most to me and
+            create meaningful connections in my life.
           </p>
           <ul class="list-goals">
-            <li>goal 1</li>
-            <li>goal 2</li>
-            <li>goal 3</li>
-            <li>goal 4</li>
+            <li>
+              Take the exciting step of moving in with my girlfriend and
+              building a loving home together.
+            </li>
+            <li>
+              Establish a routine with her that brings us closer and creates
+              shared moments of joy.
+            </li>
+            <li>
+              Expand my circle of friends, making an effort to see them and
+              nurture those relationships more often.
+            </li>
+            <li>Be closer to my family</li>
           </ul>
         </div>
       </section>
@@ -352,16 +385,22 @@ https://s3.amazonaws.com/shecodesio-production/uploads/files/000/151/748/origina
         <div class="text-content">
           <h2>Travel</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
-            commodi similique, nihil eos quam dignissimos quibusdam voluptas
-            explicabo iusto animi amet sunt. Error praesentium molestias placeat
-            aperiam reiciendis iusto inventore?
+            This year, I want to embrace the joy of exploring beautiful places
+            close to home and create memorable experiences.
           </p>
           <ul class="list-goals">
-            <li>goal 1</li>
-            <li>goal 2</li>
-            <li>goal 3</li>
-            <li>goal 4</li>
+            <li>
+              Focus on local trips, discovering nearby beaches, mountains, and
+              hidden gems by car with my girlfriend.
+            </li>
+            <li>
+              Plan an adventure to Chapada Diamantina, immersing ourselves in
+              its stunning landscapes.
+            </li>
+            <li>
+              Visit a majestic waterfall, reconnecting with nature and enjoying
+              its serenity together.
+            </li>
           </ul>
         </div>
       </section>
@@ -396,9 +435,26 @@ https://s3.amazonaws.com/shecodesio-production/uploads/files/000/151/748/origina
       src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
     ></script>
     <script>
-      $(".material-symbols-outlined").click(function () {
-        $("nav").slideToggle();
+      $(document).ready(function () {
+        const menuButton = $(".material-symbols-outlined");
+        const navMenu = $("nav");
+        const menuLinks = $(".menu a");
+
+        menuButton.click(function (e) {
+          navMenu.slideToggle();
+        });
+
+        $(document).click(function (e) {
+          if (!$(e.target).closest("nav, .material-symbols-outlined").length) {
+            navMenu.fadeOut(200);
+          }
+        });
+
+        menuLinks.click(function () {
+          navMenu.fadeOut(200);
+        });
       });
+
       $(document).ready(function () {
         const text = "Learn from yesterday, live for today, hope for tomorrow.";
         const typingSpeed = 100;
